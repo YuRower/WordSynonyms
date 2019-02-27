@@ -24,7 +24,7 @@ import lombok.extern.slf4j.Slf4j;
 public class SynonymExchangeClient {
 
 	public <T extends Object & SpeechPart> String[] getWords(Class<T> type,String word) throws IOException {
-		String url = "http://words.bighugelabs.com/api/2/key/"+ word +"/json";
+		String url = "http://words.bighugelabs.com/api/2/05a68f8f413e97e4d6579e9b53782bb5/"+ word +"/json";
 		SynonymDto synonym = parseJson(url);
 		if (type == Noun.class) {
 			return synonym.getNoun().getSyn();

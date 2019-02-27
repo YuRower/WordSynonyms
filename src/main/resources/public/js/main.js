@@ -1,21 +1,33 @@
-var app = angular.module("springDemo", []);
-
-app.controller("AppCtrl", function ($scope, $http) {
-    $scope.websites = [
-    ];
-    $(document).ready(function(){
+var part = ""
+var elemA =""
+$(document).ready(function(){
     	  $("form").submit(function(){
     	    var e = document.getElementById("myselect");
 
-    		var part = e.options[e.selectedIndex].value;
+    	    part=e.options[e.selectedIndex].value;
 
-    		var elemA = document.getElementById("myField").value; 
-
-    $http.get("http://localhost:8081/api/stackoverflow/"+ part+ "?word="+elemA).then(function (response) {
-    	$scope.websites=response.data; }); 
-    		
+    		 elemA = document.getElementById("myField").value; 
+    		 alert (elemA);
     	  });
-	});
+  });
+	
+var app = angular.module("springDemo", []);
+
+app.controller("AppCtrl", function ($scope, $http ) {
+    $scope.websites = [
+    ];
+    $scope.names = [ "verb", "noun"];
+    $scope.manualSubmit  = function(info) { 
+    	
+    	$scope.data = [
+            { word : info.myField},
+            { part : info.selectedName},
+        ];
+
 
    
+    $http.get("http://localhost:8081/api/wordsynonym/"+ info.selectedName+ "?word="+info.myField).then(function (response) {
+    	$scope.websites=response.data; 
+    	});  
+    };
 });

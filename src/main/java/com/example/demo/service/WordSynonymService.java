@@ -17,7 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
-public class StackoverflowService {
+public class WordSynonymService {
 	@Autowired
 	private SynonymExchangeClient sysonymExchangeClient;
 

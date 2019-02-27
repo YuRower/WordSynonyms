@@ -11,22 +11,17 @@
 
 <body ng-app="springDemo">
 
-
-	<select id="myselect">
-		<option value="noun">noun</option>
-		<option value="verb">verb</option>
-
-	</select>
-
-	<form action="">
-		Enter your name: <input name="word" id="myField" value=""> <br>
-		<input type="submit" value="Submit">
-
-	</form>
-
-
-
 	<div class="container" style="margin-top: 30px" ng-controller="AppCtrl">
+
+
+		<form ng-submit="submit()">
+			Enter your name: <input  type="text" ng-model="info.myField" value=""> <br>
+			 <select
+				ng-model="info.selectedName" ng-options="x for x in names">
+			</select>
+			 <button type="button" ng-click="manualSubmit(info)">Search</button>
+			
+		</form>
 		<div class="row">
 			<div class="col-md-12">
 				<div class="panel panel-default">
