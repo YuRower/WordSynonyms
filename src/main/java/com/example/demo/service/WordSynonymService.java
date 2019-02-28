@@ -1,7 +1,5 @@
 package com.example.demo.service;
 
-import static java.util.stream.Collectors.collectingAndThen;
-import static java.util.stream.Collectors.toList;
 
 import java.io.IOException;
 import java.util.Arrays;

@@ -1,7 +1,6 @@
 package com.example.demo.service;
 
-import java.net.URI;
-import java.net.URISyntaxException;
+
 import java.net.URL;
 
 import java.io.IOException;
